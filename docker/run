@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#GOPATH
+
+docker run \
+  --rm \
+  -w /go \
+  -e GOPATH=/go \
+  -v $(pwd)/build:/go/bin \
+  -v $(pwd):/go/src/github.com/google/cloud-print-connector \
+  -v $(pwd):/go/src/github.com/google/cloud-print-connector \
+  -it gcp-build \
+  go get github.com/google/cloud-print-connector/...
+
